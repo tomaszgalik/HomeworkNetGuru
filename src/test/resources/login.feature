@@ -1,6 +1,7 @@
 Feature: User login
 
 Scenario: User logs in with email and password
+
   Given I am on the main page https://trello.com/
   And I go to Login Page
   And I input correct email address
@@ -29,10 +30,11 @@ Scenario: User try to log in with wrong password
   When I click “Log in”
   Then I get prompt message “Invalid password”
 
-#Scenario: User try to log in with wrong email
-#Given I am on the main page https://trello.com/
-#And I go to Login Page
-#And I input incorrect email address
-#And	I input correct password
-#When I click “Log in”
-#Then I get prompt message “There isn't an account for this email”
+Scenario: User try to log in with wrong email
+
+  Given I am on the main page https://trello.com/
+  And I go to Login Page
+  And I input incorrect email address
+  And I input password
+  When I click “Log in”
+  Then I get prompt message “There isn't an account for this email”

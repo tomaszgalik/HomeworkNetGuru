@@ -34,7 +34,7 @@ public class LoginStepdefs {
 
     @And("^I input correct email address$")
     public void I_input_correct_email_address() throws Throwable {
-//        driver.findElement(By.id("user")).click();
+
         driver.findElement(By.cssSelector(".hide-when-two-factor #user")).sendKeys("testytomka@gmail.com");
 
     }
@@ -89,13 +89,14 @@ public class LoginStepdefs {
 
     @And("^I input incorrect email address$")
     public void I_input_incorrect_email_address() throws Throwable {
-        // Express the Regexp above with the code you wish you had
-        throw new PendingException();
+        driver.findElement(By.cssSelector(".hide-when-two-factor #user")).sendKeys("1testytomka@gmail.com");
+
     }
 
     @Then("^I get prompt message “There isn't an account for this email”$")
     public void I_get_prompt_message_There_isn_t_an_account_for_this_email() throws Throwable {
-        // Express the Regexp above with the code you wish you had
-        throw new PendingException();
+        WebElement error = driver.findElement(By.xpath("//p[contains(@class, 'error-message')]"));
+        assertNotNull(error);
+        driver.close();
     }
 }
