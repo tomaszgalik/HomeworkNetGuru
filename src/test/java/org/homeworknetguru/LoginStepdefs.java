@@ -21,7 +21,7 @@ public class LoginStepdefs {
     @Given("^I am on the main page https://trello.com/$")
     public void I_am_on_the_main_page_https_trello_com() throws Throwable {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://trello.com");
     }
